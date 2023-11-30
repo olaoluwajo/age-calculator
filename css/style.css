@@ -43,7 +43,7 @@ body {
 .container {
   background-color: var(--White);
   border-radius: 10px 10px 150px 10px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,7 +98,7 @@ form {
 }
 
 .form__container .input small {
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   font-weight: lighter;
   color: #ff0000;
 }
