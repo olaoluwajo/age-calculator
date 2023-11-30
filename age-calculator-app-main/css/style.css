@@ -1,0 +1,14 @@
+@font-face {
+  font-family: poppins;
+  src: url(/age-calculator-app-main/assets/fonts/Poppins-Regular.ttf);
+}
+
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --ligh-Red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
