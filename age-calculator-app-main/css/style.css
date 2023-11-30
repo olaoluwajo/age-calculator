@@ -87,7 +87,7 @@ form {
   color: var(--Off-black);
   padding: 0.5rem;
   width: 100%;
-  -moz-appearance: textfield;
+  /* -moz-appearance: textfield; */
   border: 2px solid var(--Light-grey);
   border-radius: 5px;
 }
@@ -98,7 +98,7 @@ form {
 }
 
 .form__container .input small {
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   font-weight: lighter;
   color: #ff0000;
 }
