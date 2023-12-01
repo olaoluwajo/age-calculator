@@ -58,6 +58,7 @@ function calculateAge() {
   //get current date
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
+
   const rawMonth = currentDate.getMonth() + 1;
   const currentMonth = rawMonth < 10 ? "0" + rawMonth : rawMonth;
   const currentDay = currentDate.getDate();
@@ -67,10 +68,26 @@ function calculateAge() {
   const inputMonth = monthInput.value;
   const inputDay = dayInput.value;
 
-  //calculate age
-  const ageYear = currentYear - inputYear;
-  const ageMonth = currentMonth - inputMonth;
-  const ageDay = currentDay - inputDay;
+  // Calculate age
+  let ageYear = currentYear - inputYear;
+  let ageMonth = currentMonth - inputMonth;
+  let ageDay = currentDay - inputDay;
+
+  //  if the current month is less than the input month adjust age
+  if (currentMonth < inputMonth) {
+    ageYear--;
+    ageMonth = 12 - (inputMonth - currentMonth);
+  }
+
+  // Adjust age if the current day is less than the input day
+  if (currentDay < inputDay) {
+    ageMonth--;
+
+    // Get the last day of the current month
+    const lastDayOfTheMonth = new Date(currentYear, currentMonth, 0).getDate();
+
+    ageDay = lastDayOfTheMonth - (inputDay - currentDay);
+  }
 
   //display age
   yearOutput.textContent = ageYear;
