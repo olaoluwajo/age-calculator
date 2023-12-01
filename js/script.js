@@ -79,9 +79,21 @@ function calculateAge() {
     ageMonth = 12 - (inputMonth - currentMonth);
   }
 
+  //if the current month equals the input month
+
+  if (currentMonth == inputMonth) {
+    //if the current day is less than the input day adjust age
+    if (currentDay < inputDay) {
+      ageYear--; //decrease ageyear by 1
+      ageMonth = 12; //let agemonth equals 12
+      ageDay = 30 - (inputDay - currentDay); 
+    }
+  }
+
   // Adjust age if the current day is less than the input day
   if (currentDay < inputDay) {
-    ageMonth--;
+    ageMonth--; //decrease agemonth by 1 
+    
 
     // Get the last day of the current month
     const lastDayOfTheMonth = new Date(currentYear, currentMonth, 0).getDate();
@@ -97,4 +109,21 @@ function calculateAge() {
 
 //add event listener to submit button
 
-submitButton.addEventListener("click", calculateAge);
+submitButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  //check if input is empty
+  if (isEmpty()) {
+    alert("Please enter a valid date");
+  } else {
+    calculateAge();
+  }
+});
+
+//function to check if input is empty
+function isEmpty() {
+  if (dayInput.value === "" || monthInput.value === "" || yearInput.value === "") {
+    return true;
+  } else {
+    return false;
+  }
+}
